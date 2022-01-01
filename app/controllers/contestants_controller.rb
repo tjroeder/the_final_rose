@@ -4,9 +4,17 @@ class ContestantsController < ApplicationController
     @contestants = @bachelorette.contestants
   end
 
+  def show
+    @contestant = Contestant.find(set_contestant[:id])
+  end
+
   private
 
   def set_bachelorette
     params.permit(:bachelorette_id)
+  end
+
+  def set_contestant
+    params.permit(:id)
   end
 end
