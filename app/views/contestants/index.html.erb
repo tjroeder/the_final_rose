@@ -1,6 +1,11 @@
 <h1><%= @bachelorette.name %>'s Contestants</h1>
 <ul>
   <% @contestants.each do |c| %>
-    <li id="cont-<%= c.id %>">Name: <%= link_to c.name, contestant_path(c) %>, Age: <%= c.age %>, Hometown: <%= c.hometown %></li>
+    <li id="cont-<%= c.id %>">Name: <%= link_to c.name, contestant_path(c) %>,  Age: <%= c.age %>, Hometown: <%= c.hometown %></li>
   <% end %>
 </ul>
+<p>These Contestants are from these hometowns:
+<% @bachelorette.hometown_list.each.with_index do |ht, i| %>
+  <%= ht + (@bachelorette.hometown_list.count - 1 == i ? '' : ', ') %>
+<% end %>
+</p>
