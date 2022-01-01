@@ -1,1 +1,9 @@
 <h1><%= @contestant.name %></h1>
+<p>Season <%= @contestant.season_number %> - <%= @contestant.description %></p>
+
+<h2>Outings:</h2>
+<ul>
+  <% @contestant.outings.each do |o| %>
+    <li id="outing-<%= o.id %>"><%= link_to o.name, outing_path(o) %></li>
+  <% end %>
+</ul>
