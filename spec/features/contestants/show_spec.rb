@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'contestant show page' do
+RSpec.describe 'contestant show page', type: :feature do
   let!(:brette_1) { Bachelorette.create!(name: 'brette_1', season_number: 1, description: 'desc_1') }
 
   let!(:cont_1) { Contestant.create!(name: 'name_1', age: 1, hometown: 'ht_1', bachelorette: brette_1) }
@@ -34,7 +34,7 @@ RSpec.describe 'contestant show page' do
   describe 'clickable elements' do
     it 'redirects the user to the outing show page' do
       click_link(outing_1.name)
-      
+
       expect(page).to have_current_path(outing_path(outing_1))
     end
   end
