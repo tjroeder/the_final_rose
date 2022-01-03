@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :bachelorette do
-    name { 'name' }
-    season_number { 1 }
-    description { 'desc_1' }
+    sequence(:name) { |n| "name_#{n}" }
+    sequence(:season_number)
+    sequence(:description) { |n| "desc_#{n}" }
   end
 end
