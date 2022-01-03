@@ -28,7 +28,6 @@ RSpec.describe 'bachelorettes contestants index' do
     end
 
     it 'displays unique list of contestant hometowns' do
-      save_and_open_page
       expect(page).to have_content("These Contestants are from these hometowns: ht_1, ht_2")
     end
   end
